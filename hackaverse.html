@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hackverse 2k23</title>
+    <style>
+        html, body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            background: linear-gradient(to right, #000, #490849df); /* Black to Purple gradient */
+            overflow: hidden; /* Hide overflow to prevent scroll bars */
+        }
+
+        body {
+            overflow-y: scroll; /* Add scroll bar for vertical overflow */
+        }
+
+        header {
+            text-align: center;
+            padding: 7em 0; /* Increase padding to move the header down */
+            color: #fff; /* Text color */
+            position: relative;
+        }
+
+        header h2 {
+            font-style: italic; /* Make the text italic */
+            font-weight: bold; /* Make the text bold */
+            background-color: #978751f6; /* Light purple background color */
+            padding: 5px; /* Add padding for better visibility */
+            border-radius: 5px; /* Add rounded corners */
+            display: inline-block; /* Ensure background color wraps around the text */
+        }
+
+        header h1 {
+            font-size: 3.5em; /* Adjust the value to make it bigger */
+            color: #fff; /* Text color */
+            position: relative; /* Make text appear above the image */
+            z-index: 1; /* Ensure text is on top */
+            margin-top: 10px; /* Adjust the margin-top as needed */
+        }
+
+        header::before {
+            content: "";
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            width: 300px; /* Rectangular header width */
+            height: 100px; /* Rectangular header height */
+            background: url('D:/christlogo2.png') center/cover;
+            border-radius: 0px; /* Adjust border radius for rounded corners */
+            border: 2px solid #fff; /* Add border */
+        }
+
+        header::after {
+            content: "";
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            width: 400px; /* Rectangular header width */
+            height: 100px; /* Rectangular header height */
+            background: url('D:/christinfotechlogo.png') center/cover;
+            border-radius: 0px; /* Adjust border radius for rounded corners */
+            border: 2px solid #fff; /* Add border */
+        }
+
+        
+
+        .circular-image {
+            position: relative;
+            top: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px; /* Adjust the width of the circular image */
+            height: 100px; /* Adjust the height of the circular image */
+            background: url('D:/sdgsell.jpg') center/cover;
+            border-radius: 50%; /* Make it circular */
+            border: 2px solid #fff; /* Add border */
+            z-index: 1; /* Ensure it's on top of other elements */
+        }
+
+        h1, p {
+            color: #fff; /* Text color */
+            position: relative; /* Make text appear above the image */
+            z-index: 1; /* Ensure text is on top */
+            margin-top: 10px; /* Adjust the margin-top as needed */
+        }
+
+        .container {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px; /* Add padding to the container */
+        }
+
+        .info-box, .objectives-box, .join-box {
+            border: 2px solid #8f8d8d; /* White rectangular border */
+            background-color: #000;
+            color: #fff;
+            padding: 30px;
+            width: 30%; /* Adjusted width for the middle boxes */
+            margin: 10px;
+            text-align: center;
+            position: relative;
+        }
+
+        .moving-dots {
+            display: inline-block;
+            font-size: 24px;
+            color: #fff;
+            animation: moveDots 2s linear infinite;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: 10px;
+        }
+
+        @keyframes moveDots {
+            0% {
+                transform: translateX(0);
+            }
+            50% {
+                transform: translateX(20px);
+            }
+            100% {
+                transform: translateX(0);
+            }
+        }
+
+        .lines {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+
+        .line {
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(to right, #0099FF, #000, #0099FF); /* Light blue to dark blue gradient */
+            opacity: 0.7; /* Adjust opacity as needed */
+            animation: moveLine linear infinite;
+        }
+
+        .line:nth-child(2) {
+            height: 1px;
+            width: 80%;
+            top: 20%;
+            left: 10%;
+            opacity: 0.5;
+            animation-duration: 7s;
+        }
+
+        .line:nth-child(3) {
+            height: 1px;
+            width: 60%;
+            top: 40%;
+            left: 20%;
+            opacity: 0.5;
+            animation-duration: 9s;
+        }
+
+        .line:nth-child(4) {
+            height: 1px;
+            width: 40%;
+            top: 60%;
+            left: 30%;
+            opacity: 0.5;
+            animation-duration: 11s;
+        }
+
+        .line:nth-child(5) {
+            height: 1px;
+            width: 20%;
+            top: 80%;
+            left: 40%;
+            opacity: 0.5;
+            animation-duration: 13s;
+        }
+
+        /* Additional lines */
+        .line:nth-child(6) {
+            height: 2px;
+            width: 70%;
+            top: 15%;
+            left: 20%;
+            opacity: 0.6;
+            animation-duration: 10s;
+        }
+
+        .line:nth-child(7) {
+            height: 1px;
+            width: 50%;
+            top: 35%;
+            left: 40%;
+            opacity: 0.4;
+            animation-duration: 8s;
+        }
+
+        .line:nth-child(8) {
+            height: 2px;
+            width: 60%;
+            top: 55%;
+            left: 10%;
+            opacity: 0.7;
+            animation-duration: 12s;
+        }
+
+        .line:nth-child(9) {
+            height: 1px;
+            width: 30%;
+            top: 75%;
+            left: 30%;
+            opacity: 0.5;
+            animation-duration: 14s;
+        }
+
+        .content {
+            text-align: center;
+            color: #fff;
+            margin: 20px;
+        }
+
+        @keyframes moveLine {
+            0% {
+                transform: translateX(-100%);
+            }
+            100% {
+                transform: translateX(100%);
+            }
+        }
+        .exciting-message {
+            position: absolute;
+            background-color: #ffd700; /* Yellow color */
+            color: #000; /* Text color */
+            padding: 15px;
+            border-radius: 5px;
+            font-size: 20px;
+            animation: fadeInOut 20s ease-in-out;
+            width: 30%;
+            text-align: center;
+            top: 60%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 5; /* Ensure it's above other elements */
+        }
+
+        @keyframes fadeInOut {
+            0%, 100% {
+                opacity: 1;
+            }
+            25%, 75% {
+                opacity: 0;
+            }
+        }
+    </style>
+    </head>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const messages = [
+                "🎉 Exciting prizes await the champions! 🏆",
+                "🚀 Unleash your creativity and win big!",
+                "🎉 Innovation at its finest, be the star of HackVerse!🎉",
+                "🎁 Don't miss the chance to grab fabulous prizes!"
+            ];
+
+            let currentIndex = 0;
+
+            function displayMessage() {
+                const messageContainer = document.createElement('div');
+                messageContainer.className = 'exciting-message';
+                messageContainer.textContent = messages[currentIndex];
+
+                document.body.insertBefore(messageContainer, document.querySelector('.container'));
+
+                // Move to the next message
+                currentIndex = (currentIndex + 1) % messages.length;
+
+                // Display the next message after an increased delay
+                setTimeout(() => {
+                    messageContainer.remove();
+                    displayMessage();
+                }, 10000); // Increased delay for better visibility
+            }
+
+            // Display the first message
+            displayMessage();
+        });
+    </script>
+</head>
+
+
+<body>
+    <div class="circular-image"></div>
+
+    <header>
+        <h2><i><strong>🫵🎉Department of Data Science </strong> <small> in association with</small> <strong>CHRIST Infotech & SDG Cell</i></strong></h2>
+        <p>Presents You...</p>
+        <h1>🏆HackVerse 2k23!!!</h1>
+        <p>"Dive into the cosmos at HackVerse, where ideas converge, sparking the brilliance of innovation and creativity!"</p>
+    </header>
+
+    <div class="lines">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+    </div>
+
+    <div class="container">
+        <div class="objectives-box">
+            <h2><strong>💥THE OBJECTIVES</strong></h2>
+            <p>Providing students the opportunity to work towards the sustainable development goals by identifying
+                issues and offering solutions for real-world challenges</p>
+            <p>Giving students a platform to work in a team of like-minded students, thereby enhancing their
+                skills and knowledge by sharing and collaborating</p>
+            <p>To test the analytical capability of the students of Lavasa campus</p>
+            <div class="moving-dots">...</div>
+        </div>
+
+        <div class="join-box">
+            <h2><strong>💥 HACKVERSE </strong></h2>
+            <p><strong> HackVerse in three exciting rounds!</strong> </p>
+            <p><strong>Phase 1: </strong> Prelims feature an online MCQ/MSQ quiz on Analytics, CHRIST University, and Sustainable Development goals. </p>
+            <p><strong>Phase 2: </strong>Top teams proceed to Phase 2 for SDG Visualization, where they visually represent a sustainable goal. </p>
+            <p><strong>Phase 3: </strong>Finale is an offline event with prototype building, mentorship, and evaluations. </p>
+            <p> Don't miss the chance to innovate and compete! </p>
+            <p>🚀 #HackVerse #InnovationJourney</p>
+            <div class="moving-dots">...</div>
+        </div>
+
+        <div class="info-box">
+            <h2><strong>💥THE THEME</strong></h2>
+            <p>This year Hackverse 23 focuses on Sustainable Development Goals.</p>
+            <h2>🪄EVENT DESCRIPTION🪄</h2>
+            <p>Students should register in teams of size 4.</p>
+            <p>   Team Size: 4 [ Can create any combination based on the following points]</p>
+            <p>   ◇ MSc/BSc Final year: 0 to 2 numbers</p>
+            <p>   ◇ Members from other departments: 1 to 4 numbers</p>
+            <p>   ◇ Members 1MSc,1 BSc, 2 BSc: 2 to 3 numbers </p>
+            <div class="moving-dots">...</div>
+        </div>
+    </div>
+
+    <footer style="background-color: #000; color: #fff; text-align: center;">
+        <h2>📲Contact People</h2>
+        <div class="container">
+            <div class="contacts">
+                <h3>Faculty In-charges</h3>
+                <p>K T Thomas, Alwin Joseph, Ruchika Rai/Pramila R M</p>
+            </div>
+
+            <div class="contacts">
+                <h3>Student Coordinators - 3MSc DS A</h3>
+                <ul>
+                    <li>22122002 - ABITH.K. SUNIL</li>
+                    <li>22122056 - TUSHAR KUMAR</li>
+                    <li>22122042 - SANJANA SENGAR</li>
+                    <li>22122051 - SPHURTI PUNDALIK PASTAY</li>
+                </ul>
+            </div>
+
+            <div class="contacts">
+                <h3>3MSc DS B</h3>
+                <ul>
+                    <li>22122111 - AYUSHI SINHA</li>
+                    <li>22122141 - RAHIL KHAN</li>
+                    <li>22122135 - NIRANJANA MOOTHANDASSERY</li>
+                    <li>22122131 - MALAVIKA RAJ</li>
+                </ul>
+            </div>
+
+            <div class="contacts">
+                <h3>3MSc EA</h3>
+                <ul>
+                    <li>22122321 - TEJAS PB</li>
+                    <li>22122314 - KRITI SWAMI</li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>
