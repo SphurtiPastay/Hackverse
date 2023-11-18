@@ -39,6 +39,10 @@
     <div class="line"></div>
     <div class="line"></div>
 </div>
+
+      
+
+   
 <div class="container mt-5">
     <div class="row m-auto">
         <div class="col-md-4 ">
@@ -83,14 +87,8 @@
         </div>
     </div>
 </div>
-<div class="container">
-    <div class="row justify-content-center">
-        
-            <div class="empty"></div>
-        
-    </div>
-</div>
 
+<div class="empty mt-5" id="empty"></div>
 <footer class="bg-black mt-5">
     <div class="container-fluid p-5 ">
         <h2 class="text-center">📲Contact People</h2>
@@ -149,10 +147,21 @@
 
         function displayMessage() {
             const messageContainer = document.createElement('div');
-            messageContainer.className = 'exciting-message col-md-12 d-md-block d-none';
+            messageContainer.className = 'exciting-message ';
             messageContainer.textContent = messages[currentIndex];
 
-            document.body.insertBefore(messageContainer, document.querySelector('empty'));
+            const emptyElement = document.getElementById('empty');
+
+            if (emptyElement) {
+                // Make sure both elements are part of the same parent before inserting
+                if (emptyElement.parentNode === document.body) {
+                    document.body.insertBefore(messageContainer, emptyElement);
+                } else {
+                    console.error('The "empty" element is not a child of document.body.');
+                }
+            } else {
+                console.error('Element with id "empty" not found.');
+            }
 
             // Move to the next message
             currentIndex = (currentIndex + 1) % messages.length;

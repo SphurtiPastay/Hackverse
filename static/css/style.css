@@ -141,7 +141,7 @@ body {
     animation: fadeInOut 20s ease-in-out;
     width: 30%;
     text-align: center;
-    top: 60%;
+    top: 70rem;
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 5;
